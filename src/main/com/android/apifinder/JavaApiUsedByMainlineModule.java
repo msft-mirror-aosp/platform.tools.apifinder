@@ -16,7 +16,7 @@
 
 package com.android.apifinder;
 
-import static com.google.errorprone.BugPattern.SeverityLevel.WARNING;
+import static com.google.errorprone.BugPattern.SeverityLevel.SUGGESTION;
 
 import com.google.auto.service.AutoService;
 import com.google.errorprone.BugPattern;
@@ -41,7 +41,7 @@ import javax.lang.model.element.Modifier;
 @BugPattern(
     name = "JavaApiUsedByMainlineModule",
     summary = "Any public method used by a mainline module.",
-    severity = WARNING)
+    severity = SUGGESTION)
 public final class JavaApiUsedByMainlineModule extends BugChecker
     implements MethodInvocationTreeMatcher, NewClassTreeMatcher {
 
