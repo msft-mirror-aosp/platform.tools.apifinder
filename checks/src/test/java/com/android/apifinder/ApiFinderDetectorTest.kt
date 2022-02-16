@@ -1,4 +1,4 @@
-package com.google.android.apifinder
+package com.android.apifinder
 
 import com.android.tools.lint.checks.infrastructure.LintDetectorTest
 import com.android.tools.lint.detector.api.Detector
