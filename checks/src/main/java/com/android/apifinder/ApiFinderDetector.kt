@@ -41,13 +41,13 @@ class ApiFinderDetector : Detector(), Detector.UastScanner {
           private fun visitGenericMethod(
               method: PsiMethod, node: UElement, isModuleMethod: Boolean = false
           ) {
-              // Exclude non-public/protected calls.
-              if (!method.hasModifier(JvmModifier.PUBLIC) && !method.hasModifier(JvmModifier.PROTECTED)) {
+              // Exclude non-public calls.
+              if (!method.hasModifier(JvmModifier.PUBLIC)) {
                   return
               }
               var containingClass = method.containingClass
               while (containingClass != null) {
-                  if (!containingClass.hasModifier(JvmModifier.PUBLIC) && !containingClass.hasModifier(JvmModifier.PROTECTED)) {
+                  if (!containingClass.hasModifier(JvmModifier.PUBLIC)) {
                       return
                   }
                   containingClass = containingClass.containingClass
