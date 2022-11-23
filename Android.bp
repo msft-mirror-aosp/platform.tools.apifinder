@@ -44,31 +44,6 @@ java_library_host {
     javacflags: ["-verbose"],
 }
 
-java_test_host {
-    name: "JavaApiUsedByMainlineModuleTest",
-    srcs: ["src/test/**/JavaApiUsedByMainlineModuleTest.java"],
-    java_resource_dirs: ["src/test/res"],
-    java_resources: [":java_api_used_by_mainline_module_testdata"],
-    static_libs: [
-        "java_api_used_by_mainline_module",
-        "error_prone_test_helpers",
-        "hamcrest-library",
-        "hamcrest",
-        "platform-test-annotations",
-        "junit",
-        "truth-prebuilt",
-    ],
-    test_options: {
-        unit_test: true,
-    },
-}
-
-filegroup {
-    name: "java_api_used_by_mainline_module_testdata",
-    path: "src/test/res",
-    srcs: ["src/test/res/**/*.java"],
-}
-
 // ------------------------- AndroidLint Checkers ----------------------------------
 
 java_library_host {
